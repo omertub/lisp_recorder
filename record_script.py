@@ -41,7 +41,10 @@ def record(output_name):
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    print('* recording')
+    print('* recording - Start!')
+    global window
+    window['-REC-'].update(button_color='red')
+    window.finalize()
 
     frames = []
 
@@ -49,7 +52,7 @@ def record(output_name):
         data = stream.read(CHUNK)
         frames.append(data)
 
-    print('* done recording')
+    print('* done recording - Stop!')
 
     stream.stop_stream()
     stream.close()
@@ -99,6 +102,7 @@ def main():
     words_list = []
     cont_dir = ''
 
+    global window
     window = sg.Window('Lisp Records', layout,
                        element_justification='c', finalize=True)
 
@@ -113,6 +117,7 @@ def main():
             enable_button(window, '-REC-')
             disable_button(window, '-START-')
             window['-NAME-'].update(disabled=True)
+            
             # prepare for recording
             name = values['-NAME-']
             words_list, cont_dir = build_dir_tree(name)
@@ -121,8 +126,6 @@ def main():
             window['-CURR_WORD-'].update(curr_word)
 
         if event == '-REC-':
-            window['-REC-'].update(button_color='red')
-            window.finalize()
             word, pron = words_list[word_cnt].split('/', 2)
             pron_dir = cont_dir + '/' + words_list[word_cnt]
             file_path = f'{pron_dir}/{str(word_cnt // (2 * NUM_RECORDS))}_{pron[0]}{str(word_cnt % NUM_RECORDS)}.wav'
