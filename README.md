@@ -18,6 +18,7 @@ Run script and record:
 
 input name and click start, then press 'record' to start recording for current word, press 'next' for next word (pretty self explainatory, isn't it?)
 
+![alt text](https://github.com/omertub/lisp_recorder/blob/main/Example.jpg?raw=true)
 
 
 ##### Feel free to copy and change however you want
