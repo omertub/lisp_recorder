@@ -1,6 +1,6 @@
 # Lisp Recorder
-### Simple GUI for fixed time recording of common lisping words in good/bad pronanciation
-Written for data collecting for our final project - lisp recognition with machine/deep learning
+### Simple GUI for fixed time recording of common lisping words in good/bad pronunciation
+Written for data collection for our final project - lisp recognition with machine/deep learning
 
 #### Libraries I used in this project:
 
@@ -8,17 +8,18 @@ Written for data collecting for our final project - lisp recognition with machin
 - PySimpleGui
 
 #### Usage:
-replace constants with wanted values:
+update json for wanted values:
 
-- WORDS - list of word to be recorded
-- NUM_RECORDS - number of records for each word and pronanciation
-- RECORD_SECONDS - fixed time for each recording
+- "words" - list of word to be recorded
+- "records" - number of records for each word and pronanciation
+- "record_sec" - fixed time for each recording
 
 Run script and record:
 
-input name and click start, then press 'record' to start recording for current word, press 'next' for next word (pretty self explainatory, isn't it?)
+Enter name and click start, then press 'record' to start recording for current word, press 'next' for next word (pretty self explainatory, isn't it?).
+Can press 'Replay' to hear the last recorded word.
 
 ![alt text](https://github.com/omertub/lisp_recorder/blob/main/Example.jpg?raw=true)
 
 
-##### Feel free to copy and change however you want
+##### Feel free to copy and change whatever you want
